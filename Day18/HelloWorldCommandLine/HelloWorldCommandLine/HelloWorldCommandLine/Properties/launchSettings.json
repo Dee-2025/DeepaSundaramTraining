@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HelloWorldCommandLine": {
+      "commandName": "Project",
+      "commandLineArgs": "Deepa Mathi Prem Rrd"
+    }
+  }
+}
