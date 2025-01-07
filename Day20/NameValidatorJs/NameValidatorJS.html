@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Name Validator</title>
+</head>
+<body>
+    <h1>Name Validator</h1>
+    <form>
+        <label for="name">Enter your name:</label>
+        <input type="text" id="name" name="name">
+    </form>
+</body>
+</html>
+<script>
+    document.getElementById('name').addEventListener('input', function (event) {
+        const nameInput = event.target.value;
+        const namePattern = /^[A-Za-z]+$/;
+        if (!namePattern.test(nameInput)) {
+            alert('Name should not contain spaces or numbers.');
+            event.target.value = nameInput.replace(/[^A-Za-z]/g, '');
+        }
+    });
+</script>
+<p id="validName"></p>
+
+<script>
+    document.getElementById('name').addEventListener('blur', function (event) {
+        const nameInput = event.target.value;
+        const namePattern = /^[A-Za-z]+$/;
+        const validNameElement = document.getElementById('validName');
+        if (namePattern.test(nameInput)) {
+            validNameElement.textContent = nameInput;
+        } else {
+            validNameElement.textContent = '';
+        }
+    });
+</script>
