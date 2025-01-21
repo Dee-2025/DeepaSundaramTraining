@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35201.131
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RectangelWithPropertyApp", "RectangelWithPropertyApp\RectangelWithPropertyApp.csproj", "{4857744C-956A-4E8F-A051-17F3F7C2C137}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4857744C-956A-4E8F-A051-17F3F7C2C137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4857744C-956A-4E8F-A051-17F3F7C2C137}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4857744C-956A-4E8F-A051-17F3F7C2C137}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4857744C-956A-4E8F-A051-17F3F7C2C137}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4FDBAF62-6258-4387-ACDF-656F8C51BE48}
+	EndGlobalSection
+EndGlobal
