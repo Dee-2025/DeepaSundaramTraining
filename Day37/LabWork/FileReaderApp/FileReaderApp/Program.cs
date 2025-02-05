@@ -26,32 +26,45 @@ namespace FileReaderApp
             
             var employeeSet = new HashSet<string>();
             var jobCount = new Dictionary<string, int>();
-
-           var lineCount = 0;
-            foreach (var line in File.ReadLines(filePath))
+            var lineCount = 0;
+            if (File.Exists(filePath))
             {
-                var fields = line.Split(',');
-
-                if (fields.Length >= 2 && lineCount != 0)
+                var fs = new FileStream(filePath, FileMode.Open);
+                var sr = new StreamReader(fs);
+                while (true)
                 {
-                    string jobTitle = fields[2].Trim().Trim('\''); ; 
-                    string employeeName = fields[1].Trim().Trim('\''); 
 
-                   
-                  
-                    
-                    if (employeeSet.Add(employeeName))
+                    var line = sr.ReadLine();
+                    if (line == null) break;
+                    var fields = line.Split(',');
+
+                    if (fields.Length >= 2 && lineCount != 0)
                     {
-                       
-                        if (!jobCount.ContainsKey(jobTitle))
+                        string jobTitle = fields[2].Trim().Trim('\''); ;
+                        string employeeName = fields[1].Trim().Trim('\'');
+                        if (employeeSet.Add(employeeName))
                         {
-                            jobCount[jobTitle] = 0;
+
+                            if (!jobCount.ContainsKey(jobTitle))
+                            {
+                                jobCount[jobTitle] = 0;
+                            }
+                            jobCount[jobTitle]++;
                         }
-                        jobCount[jobTitle]++;
                     }
+                    lineCount++;
                 }
-                lineCount++;
+                sr.Close();
+                fs.Close();
             }
+            else
+            {
+                Console.WriteLine("File does not exist");
+                return jobCount;
+            }
+            
+           
+          
 
             return jobCount;
         }
